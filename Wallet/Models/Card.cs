@@ -16,5 +16,7 @@ namespace Wallet.Models
         public Int32 ExpireYear { get; set; }
         public Int32 Cvc { get; set; }
         public Double Limit { get; set; }
+
+        public DateTime CreatedAt { get; set; }
     }
 }

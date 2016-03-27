@@ -11,11 +11,19 @@ using Wallet.Models;
 
 namespace Wallet
 {
-    public partial class Wallet : Form
+    public partial class WalletForm : Form
     {
-        public Wallet()
+        public WalletForm()
         {
             InitializeComponent();
+        }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            txtCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+
+            String Cpf = txtCpf.Text.Trim();
+            String Password = txtPassword.Text;
         }
     }
 }

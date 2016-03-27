@@ -16,7 +16,7 @@ namespace Wallet
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Wallet());
+            Application.Run(new WalletForm());
         }
     }
 }
