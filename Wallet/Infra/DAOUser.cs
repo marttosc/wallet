@@ -137,5 +137,44 @@ namespace Infra
 
             return true;
         }
+
+        public List<User> ListUsers()
+        {
+            List<User> users = new List<User>();
+
+            var sql = "SELECT Id, Name, Cpf, Birthdate, Email, Address, CreatedAt FROM Users ORDER BY Name";
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand(sql, base.SqlConn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    users.Add(
+                        new User
+                        {
+                            Id = Convert.ToInt32(rdr["Id"]),
+                            Name = rdr["Name"].ToString(),
+                            Cpf = rdr["Cpf"].ToString(),
+                            Birthdate = Convert.ToDateTime(rdr["Birthdate"]),
+                            Email = rdr["Email"].ToString(),
+                            Address = rdr["Address"].ToString(),
+                            CreatedAt = Convert.ToDateTime(rdr["CreatedAt"])
+                        }
+                    );
+                }
+            }
+            catch (SqlException e)
+            {
+                throw new NullReferenceException("Erro ao consultar tabela: " + e.Message);
+            }
+            finally
+            {
+                base.SqlConn.Close();
+            }
+
+            return users;
+        }
     }
 }

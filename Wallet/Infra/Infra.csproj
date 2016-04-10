@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DALWallet.cs" />
+    <Compile Include="DAOCard.cs" />
     <Compile Include="DAOFlag.cs" />
     <Compile Include="DAOUser.cs" />
     <Compile Include="Properties.Designer.cs">

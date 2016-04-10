@@ -17,6 +17,8 @@ namespace View
         {
             btnEntrar.Enabled = false;
 
+            MaskFormat format = txtCpf.TextMaskFormat;
+
             String Cpf = txtCpf.Text.Trim();
             String Password = txtPassword.Text;
 
@@ -49,6 +51,8 @@ namespace View
                     MessageBox.Show("CPF ou senha inválidos.");
                 }
             }
+
+            txtCpf.TextMaskFormat = format;
 
             btnEntrar.Enabled = true;
         }

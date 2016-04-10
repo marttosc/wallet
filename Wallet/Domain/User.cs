@@ -72,6 +72,11 @@ namespace Domain.Models
             return true;
         }
 
+        public override String ToString()
+        {
+            return Name;
+        }
+
         public static bool ValidateCpf(String cpf)
         {
             if (cpf.Equals("00000000000") || cpf.Equals("11111111111") ||

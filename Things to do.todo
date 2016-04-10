@@ -4,8 +4,8 @@
    ✔ Habilitar validação com o banco de dados @done (16-04-10 13:50)
    ✔ Fazer criptografia de senha @done (16-04-10 13:50)
  ☐ Tela Inicial
-   ☐ DataGridView c/ Listagem Geral
-   ☐ Menu/Botões p/ Create (Tela de Cadastro)
+   ✔ DataGridView c/ Listagem Geral @done (16-04-10 19:20)
+   ✔ Menu/Botões p/ Create (Tela de Cadastro) @done (16-04-10 19:20)
    ☐ Update e Delete a partir de Eventos da Grid
    ☐ Criar Tela de Update e outra para Tela de Delete
  ✔ Divisão na Solution @done (16-04-02 09:14)

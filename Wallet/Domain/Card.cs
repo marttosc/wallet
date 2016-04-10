@@ -14,7 +14,7 @@ namespace Domain.Models
         public String Number { get; set; }
         public Int32 ExpireMonth { get; set; }
         public Int32 ExpireYear { get; set; }
-        public Int32 Cvc { get; set; }
+        public String Cvc { get; set; }
         public Double Limit { get; set; }
 
         public DateTime CreatedAt { get; set; }
