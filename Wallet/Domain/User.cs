@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Wallet.Models
+namespace Domain.Models
 {
     public class User
     {
@@ -15,7 +15,7 @@ namespace Wallet.Models
         public String Email { get; set; }
         public String Password { get; set; }
         public Double Income { get; set; }
-        public Address Address { get; set; }
+        public String Address { get; set; }
 
         public DateTime CreatedAt { get; set; }
         public DateTime UpdateAt { get; set; }

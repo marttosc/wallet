@@ -1,0 +1,14 @@
+ Atividades a serem feitas no projeto
+
+ ✔ Login @done (16-03-28 21:53)
+   ✔ Habilitar validação com o banco de dados @done (16-04-10 13:50)
+   ✔ Fazer criptografia de senha @done (16-04-10 13:50)
+ ☐ Tela Inicial
+   ☐ DataGridView c/ Listagem Geral
+   ☐ Menu/Botões p/ Create (Tela de Cadastro)
+   ☐ Update e Delete a partir de Eventos da Grid
+   ☐ Criar Tela de Update e outra para Tela de Delete
+ ✔ Divisão na Solution @done (16-04-02 09:14)
+   ✔ Domain - entidades @done (16-04-02 09:14)
+   ✔ Infra - acesso a dados @done (16-04-02 09:14)
+   ✔ View - Windows Forms @done (16-04-02 09:14)
