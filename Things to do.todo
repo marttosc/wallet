@@ -3,11 +3,11 @@
  ✔ Login @done (16-03-28 21:53)
    ✔ Habilitar validação com o banco de dados @done (16-04-10 13:50)
    ✔ Fazer criptografia de senha @done (16-04-10 13:50)
- ☐ Tela Inicial
+ ✔ Tela Inicial @done (16-04-10 23:44)
    ✔ DataGridView c/ Listagem Geral @done (16-04-10 19:20)
    ✔ Menu/Botões p/ Create (Tela de Cadastro) @done (16-04-10 19:20)
-   ☐ Update e Delete a partir de Eventos da Grid
-   ☐ Criar Tela de Update e outra para Tela de Delete
+   ✔ Update e Delete a partir de Eventos da Grid @done (16-04-10 23:44)
+   ✔ Criar Tela de Update e outra para Tela de Delete @done (16-04-10 23:44)
  ✔ Divisão na Solution @done (16-04-02 09:14)
    ✔ Domain - entidades @done (16-04-02 09:14)
    ✔ Infra - acesso a dados @done (16-04-02 09:14)

@@ -56,17 +56,36 @@
             this.lblCvc = new System.Windows.Forms.Label();
             this.txtAddLimit = new System.Windows.Forms.MaskedTextBox();
             this.lblLimit = new System.Windows.Forms.Label();
+            this.tabContentUpdate = new System.Windows.Forms.TabPage();
+            this.txtUpdLimit = new System.Windows.Forms.MaskedTextBox();
+            this.lblUpdLimit = new System.Windows.Forms.Label();
+            this.txtUpdCvc = new System.Windows.Forms.MaskedTextBox();
+            this.lblUpdCvc = new System.Windows.Forms.Label();
+            this.lblUpdExpireYear = new System.Windows.Forms.Label();
+            this.cbbUpdExpireYear = new System.Windows.Forms.ComboBox();
+            this.lblUpdExpireMonth = new System.Windows.Forms.Label();
+            this.cbbUpdExpireMonth = new System.Windows.Forms.ComboBox();
+            this.txtUpdNumber = new System.Windows.Forms.MaskedTextBox();
+            this.lblUpdNumber = new System.Windows.Forms.Label();
+            this.btnUpdCancel = new System.Windows.Forms.Button();
+            this.btnUpdSave = new System.Windows.Forms.Button();
+            this.lblUpdFlag = new System.Windows.Forms.Label();
+            this.cbbUpdFlag = new System.Windows.Forms.ComboBox();
+            this.txtUpdId = new System.Windows.Forms.TextBox();
+            this.lblUpdId = new System.Windows.Forms.Label();
             this.tabPanel.SuspendLayout();
             this.tabContentSearch.SuspendLayout();
             this.tabContentAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             this.gpbFilter.SuspendLayout();
+            this.tabContentUpdate.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPanel
             // 
             this.tabPanel.Controls.Add(this.tabContentSearch);
             this.tabPanel.Controls.Add(this.tabContentAdd);
+            this.tabPanel.Controls.Add(this.tabContentUpdate);
             this.tabPanel.Location = new System.Drawing.Point(12, 12);
             this.tabPanel.Name = "tabPanel";
             this.tabPanel.SelectedIndex = 0;
@@ -123,6 +142,7 @@
             this.dgvSearch.ReadOnly = true;
             this.dgvSearch.Size = new System.Drawing.Size(698, 239);
             this.dgvSearch.TabIndex = 0;
+            this.dgvSearch.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSearch_RowHeaderMouseClick);
             // 
             // btnUpdate
             // 
@@ -219,6 +239,7 @@
             this.txtOwner.Enabled = false;
             this.txtOwner.Location = new System.Drawing.Point(7, 24);
             this.txtOwner.Name = "txtOwner";
+            this.txtOwner.ReadOnly = true;
             this.txtOwner.Size = new System.Drawing.Size(344, 25);
             this.txtOwner.TabIndex = 1;
             // 
@@ -372,6 +393,202 @@
             this.lblLimit.TabIndex = 14;
             this.lblLimit.Text = "Limite";
             // 
+            // tabContentUpdate
+            // 
+            this.tabContentUpdate.Controls.Add(this.txtUpdId);
+            this.tabContentUpdate.Controls.Add(this.lblUpdId);
+            this.tabContentUpdate.Controls.Add(this.txtUpdLimit);
+            this.tabContentUpdate.Controls.Add(this.lblUpdLimit);
+            this.tabContentUpdate.Controls.Add(this.txtUpdCvc);
+            this.tabContentUpdate.Controls.Add(this.lblUpdCvc);
+            this.tabContentUpdate.Controls.Add(this.lblUpdExpireYear);
+            this.tabContentUpdate.Controls.Add(this.cbbUpdExpireYear);
+            this.tabContentUpdate.Controls.Add(this.lblUpdExpireMonth);
+            this.tabContentUpdate.Controls.Add(this.cbbUpdExpireMonth);
+            this.tabContentUpdate.Controls.Add(this.txtUpdNumber);
+            this.tabContentUpdate.Controls.Add(this.lblUpdNumber);
+            this.tabContentUpdate.Controls.Add(this.btnUpdCancel);
+            this.tabContentUpdate.Controls.Add(this.btnUpdSave);
+            this.tabContentUpdate.Controls.Add(this.lblUpdFlag);
+            this.tabContentUpdate.Controls.Add(this.cbbUpdFlag);
+            this.tabContentUpdate.Location = new System.Drawing.Point(4, 26);
+            this.tabContentUpdate.Name = "tabContentUpdate";
+            this.tabContentUpdate.Padding = new System.Windows.Forms.Padding(3);
+            this.tabContentUpdate.Size = new System.Drawing.Size(710, 348);
+            this.tabContentUpdate.TabIndex = 2;
+            this.tabContentUpdate.Text = "Atualizar";
+            this.tabContentUpdate.UseVisualStyleBackColor = true;
+            // 
+            // txtUpdLimit
+            // 
+            this.txtUpdLimit.Location = new System.Drawing.Point(9, 223);
+            this.txtUpdLimit.Mask = "$ 999\\.999\\,\\0\\0";
+            this.txtUpdLimit.Name = "txtUpdLimit";
+            this.txtUpdLimit.Size = new System.Drawing.Size(151, 25);
+            this.txtUpdLimit.TabIndex = 29;
+            // 
+            // lblUpdLimit
+            // 
+            this.lblUpdLimit.AutoSize = true;
+            this.lblUpdLimit.Location = new System.Drawing.Point(6, 203);
+            this.lblUpdLimit.Name = "lblUpdLimit";
+            this.lblUpdLimit.Size = new System.Drawing.Size(42, 17);
+            this.lblUpdLimit.TabIndex = 28;
+            this.lblUpdLimit.Text = "Limite";
+            // 
+            // txtUpdCvc
+            // 
+            this.txtUpdCvc.Location = new System.Drawing.Point(356, 91);
+            this.txtUpdCvc.Mask = "000";
+            this.txtUpdCvc.Name = "txtUpdCvc";
+            this.txtUpdCvc.Size = new System.Drawing.Size(79, 25);
+            this.txtUpdCvc.TabIndex = 27;
+            // 
+            // lblUpdCvc
+            // 
+            this.lblUpdCvc.AutoSize = true;
+            this.lblUpdCvc.Location = new System.Drawing.Point(353, 71);
+            this.lblUpdCvc.Name = "lblUpdCvc";
+            this.lblUpdCvc.Size = new System.Drawing.Size(32, 17);
+            this.lblUpdCvc.TabIndex = 26;
+            this.lblUpdCvc.Text = "CVC";
+            // 
+            // lblUpdExpireYear
+            // 
+            this.lblUpdExpireYear.AutoSize = true;
+            this.lblUpdExpireYear.Location = new System.Drawing.Point(177, 135);
+            this.lblUpdExpireYear.Name = "lblUpdExpireYear";
+            this.lblUpdExpireYear.Size = new System.Drawing.Size(121, 17);
+            this.lblUpdExpireYear.TabIndex = 25;
+            this.lblUpdExpireYear.Text = "Ano de Vencimento";
+            // 
+            // cbbUpdExpireYear
+            // 
+            this.cbbUpdExpireYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbUpdExpireYear.FormattingEnabled = true;
+            this.cbbUpdExpireYear.Items.AddRange(new object[] {
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"});
+            this.cbbUpdExpireYear.Location = new System.Drawing.Point(180, 155);
+            this.cbbUpdExpireYear.Name = "cbbUpdExpireYear";
+            this.cbbUpdExpireYear.Size = new System.Drawing.Size(151, 25);
+            this.cbbUpdExpireYear.TabIndex = 24;
+            // 
+            // lblUpdExpireMonth
+            // 
+            this.lblUpdExpireMonth.AutoSize = true;
+            this.lblUpdExpireMonth.Location = new System.Drawing.Point(3, 135);
+            this.lblUpdExpireMonth.Name = "lblUpdExpireMonth";
+            this.lblUpdExpireMonth.Size = new System.Drawing.Size(123, 17);
+            this.lblUpdExpireMonth.TabIndex = 23;
+            this.lblUpdExpireMonth.Text = "Mês de Vencimento";
+            // 
+            // cbbUpdExpireMonth
+            // 
+            this.cbbUpdExpireMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbUpdExpireMonth.FormattingEnabled = true;
+            this.cbbUpdExpireMonth.Items.AddRange(new object[] {
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12"});
+            this.cbbUpdExpireMonth.Location = new System.Drawing.Point(6, 155);
+            this.cbbUpdExpireMonth.Name = "cbbUpdExpireMonth";
+            this.cbbUpdExpireMonth.Size = new System.Drawing.Size(151, 25);
+            this.cbbUpdExpireMonth.TabIndex = 22;
+            // 
+            // txtUpdNumber
+            // 
+            this.txtUpdNumber.Location = new System.Drawing.Point(180, 91);
+            this.txtUpdNumber.Mask = "0000 0000 0000 0099";
+            this.txtUpdNumber.Name = "txtUpdNumber";
+            this.txtUpdNumber.ReadOnly = true;
+            this.txtUpdNumber.Size = new System.Drawing.Size(151, 25);
+            this.txtUpdNumber.TabIndex = 21;
+            // 
+            // lblUpdNumber
+            // 
+            this.lblUpdNumber.AutoSize = true;
+            this.lblUpdNumber.Location = new System.Drawing.Point(177, 71);
+            this.lblUpdNumber.Name = "lblUpdNumber";
+            this.lblUpdNumber.Size = new System.Drawing.Size(56, 17);
+            this.lblUpdNumber.TabIndex = 20;
+            this.lblUpdNumber.Text = "Número";
+            // 
+            // btnUpdCancel
+            // 
+            this.btnUpdCancel.Location = new System.Drawing.Point(6, 310);
+            this.btnUpdCancel.Name = "btnUpdCancel";
+            this.btnUpdCancel.Size = new System.Drawing.Size(91, 32);
+            this.btnUpdCancel.TabIndex = 19;
+            this.btnUpdCancel.Text = "Cancelar";
+            this.btnUpdCancel.UseVisualStyleBackColor = true;
+            this.btnUpdCancel.Click += new System.EventHandler(this.btnUpdCancel_Click);
+            // 
+            // btnUpdSave
+            // 
+            this.btnUpdSave.Location = new System.Drawing.Point(613, 310);
+            this.btnUpdSave.Name = "btnUpdSave";
+            this.btnUpdSave.Size = new System.Drawing.Size(91, 32);
+            this.btnUpdSave.TabIndex = 18;
+            this.btnUpdSave.Text = "Atualizar";
+            this.btnUpdSave.UseVisualStyleBackColor = true;
+            this.btnUpdSave.Click += new System.EventHandler(this.btnUpdSave_Click);
+            // 
+            // lblUpdFlag
+            // 
+            this.lblUpdFlag.AutoSize = true;
+            this.lblUpdFlag.Location = new System.Drawing.Point(6, 71);
+            this.lblUpdFlag.Name = "lblUpdFlag";
+            this.lblUpdFlag.Size = new System.Drawing.Size(59, 17);
+            this.lblUpdFlag.TabIndex = 17;
+            this.lblUpdFlag.Text = "Bandeira";
+            // 
+            // cbbUpdFlag
+            // 
+            this.cbbUpdFlag.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbUpdFlag.FormattingEnabled = true;
+            this.cbbUpdFlag.Location = new System.Drawing.Point(6, 91);
+            this.cbbUpdFlag.Name = "cbbUpdFlag";
+            this.cbbUpdFlag.Size = new System.Drawing.Size(151, 25);
+            this.cbbUpdFlag.TabIndex = 16;
+            // 
+            // txtUpdId
+            // 
+            this.txtUpdId.Enabled = false;
+            this.txtUpdId.Location = new System.Drawing.Point(6, 27);
+            this.txtUpdId.Name = "txtUpdId";
+            this.txtUpdId.ReadOnly = true;
+            this.txtUpdId.Size = new System.Drawing.Size(154, 25);
+            this.txtUpdId.TabIndex = 31;
+            this.txtUpdId.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblUpdId
+            // 
+            this.lblUpdId.AutoSize = true;
+            this.lblUpdId.Location = new System.Drawing.Point(5, 6);
+            this.lblUpdId.Name = "lblUpdId";
+            this.lblUpdId.Size = new System.Drawing.Size(20, 17);
+            this.lblUpdId.TabIndex = 30;
+            this.lblUpdId.Text = "ID";
+            // 
             // WalletPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -393,6 +610,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
             this.gpbFilter.ResumeLayout(false);
             this.gpbFilter.PerformLayout();
+            this.tabContentUpdate.ResumeLayout(false);
+            this.tabContentUpdate.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -427,5 +646,22 @@
         private System.Windows.Forms.Label lblLimit;
         private System.Windows.Forms.MaskedTextBox txtAddCvc;
         private System.Windows.Forms.Label lblCvc;
+        private System.Windows.Forms.TabPage tabContentUpdate;
+        private System.Windows.Forms.MaskedTextBox txtUpdLimit;
+        private System.Windows.Forms.Label lblUpdLimit;
+        private System.Windows.Forms.MaskedTextBox txtUpdCvc;
+        private System.Windows.Forms.Label lblUpdCvc;
+        private System.Windows.Forms.Label lblUpdExpireYear;
+        private System.Windows.Forms.ComboBox cbbUpdExpireYear;
+        private System.Windows.Forms.Label lblUpdExpireMonth;
+        private System.Windows.Forms.ComboBox cbbUpdExpireMonth;
+        private System.Windows.Forms.MaskedTextBox txtUpdNumber;
+        private System.Windows.Forms.Label lblUpdNumber;
+        private System.Windows.Forms.Button btnUpdCancel;
+        private System.Windows.Forms.Button btnUpdSave;
+        private System.Windows.Forms.Label lblUpdFlag;
+        private System.Windows.Forms.ComboBox cbbUpdFlag;
+        private System.Windows.Forms.TextBox txtUpdId;
+        private System.Windows.Forms.Label lblUpdId;
     }
 }

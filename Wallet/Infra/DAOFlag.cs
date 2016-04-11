@@ -51,10 +51,12 @@ namespace Infra
 
             var flags = new List<Flag>();
 
+            SqlDataReader rdr = null;
+
             try
             {
                 SqlCommand cmd = new SqlCommand(sql, base.SqlConn);
-                SqlDataReader rdr = cmd.ExecuteReader();
+                rdr = cmd.ExecuteReader();
 
                 while (rdr.Read())
                 {
@@ -70,6 +72,13 @@ namespace Infra
             catch (SqlException e)
             {
                 throw new NullReferenceException("Erro ao consultar tabela: " + e.Message);
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
             }
 
             return flags;

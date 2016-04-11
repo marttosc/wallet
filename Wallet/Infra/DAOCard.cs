@@ -142,5 +142,31 @@ namespace Infra
 
             return true;
         }
+
+        public Boolean Update(Card card)
+        {
+            String sql = "UPDATE Cards SET Flag = @Flag, ExpireMonth = @ExpireMonth, " +
+                            "ExpireYear = @ExpireYear, Cvc = @Cvc, Limit = @Limit WHERE Id = @Id";
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand(sql, base.SqlConn);
+
+                cmd.Parameters.AddWithValue("@Flag", card.Flag.Id);
+                cmd.Parameters.AddWithValue("@ExpireMonth", card.ExpireMonth);
+                cmd.Parameters.AddWithValue("@ExpireYear", card.ExpireYear);
+                cmd.Parameters.AddWithValue("@Cvc", card.Cvc);
+                cmd.Parameters.AddWithValue("@Limit", card.Limit);
+                cmd.Parameters.AddWithValue("@Id", card.Id);
+
+                return Convert.ToBoolean(cmd.ExecuteNonQuery());
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+
+                return false;
+            }
+        }
     }
 }
