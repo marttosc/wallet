@@ -73,12 +73,30 @@
             this.cbbUpdFlag = new System.Windows.Forms.ComboBox();
             this.txtUpdId = new System.Windows.Forms.TextBox();
             this.lblUpdId = new System.Windows.Forms.Label();
+            this.tabContentDelete = new System.Windows.Forms.TabPage();
+            this.txtDelId = new System.Windows.Forms.TextBox();
+            this.lblDelId = new System.Windows.Forms.Label();
+            this.txtDelLimit = new System.Windows.Forms.MaskedTextBox();
+            this.lblDelLimit = new System.Windows.Forms.Label();
+            this.txtDelCvc = new System.Windows.Forms.MaskedTextBox();
+            this.lblDelCvc = new System.Windows.Forms.Label();
+            this.lblDelExpireYear = new System.Windows.Forms.Label();
+            this.cbbDelExpireYear = new System.Windows.Forms.ComboBox();
+            this.lblDelExpireMonth = new System.Windows.Forms.Label();
+            this.cbbDelExpireMonth = new System.Windows.Forms.ComboBox();
+            this.txtDelNumber = new System.Windows.Forms.MaskedTextBox();
+            this.lblDelNumber = new System.Windows.Forms.Label();
+            this.lblDelFlag = new System.Windows.Forms.Label();
+            this.cbbDelFlag = new System.Windows.Forms.ComboBox();
+            this.btnDelCancel = new System.Windows.Forms.Button();
+            this.btnDelSave = new System.Windows.Forms.Button();
             this.tabPanel.SuspendLayout();
             this.tabContentSearch.SuspendLayout();
             this.tabContentAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             this.gpbFilter.SuspendLayout();
             this.tabContentUpdate.SuspendLayout();
+            this.tabContentDelete.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPanel
@@ -86,6 +104,7 @@
             this.tabPanel.Controls.Add(this.tabContentSearch);
             this.tabPanel.Controls.Add(this.tabContentAdd);
             this.tabPanel.Controls.Add(this.tabContentUpdate);
+            this.tabPanel.Controls.Add(this.tabContentDelete);
             this.tabPanel.Location = new System.Drawing.Point(12, 12);
             this.tabPanel.Name = "tabPanel";
             this.tabPanel.SelectedIndex = 0;
@@ -589,6 +608,209 @@
             this.lblUpdId.TabIndex = 30;
             this.lblUpdId.Text = "ID";
             // 
+            // tabContentDelete
+            // 
+            this.tabContentDelete.Controls.Add(this.btnDelCancel);
+            this.tabContentDelete.Controls.Add(this.btnDelSave);
+            this.tabContentDelete.Controls.Add(this.txtDelId);
+            this.tabContentDelete.Controls.Add(this.lblDelId);
+            this.tabContentDelete.Controls.Add(this.txtDelLimit);
+            this.tabContentDelete.Controls.Add(this.lblDelLimit);
+            this.tabContentDelete.Controls.Add(this.txtDelCvc);
+            this.tabContentDelete.Controls.Add(this.lblDelCvc);
+            this.tabContentDelete.Controls.Add(this.lblDelExpireYear);
+            this.tabContentDelete.Controls.Add(this.cbbDelExpireYear);
+            this.tabContentDelete.Controls.Add(this.lblDelExpireMonth);
+            this.tabContentDelete.Controls.Add(this.cbbDelExpireMonth);
+            this.tabContentDelete.Controls.Add(this.txtDelNumber);
+            this.tabContentDelete.Controls.Add(this.lblDelNumber);
+            this.tabContentDelete.Controls.Add(this.lblDelFlag);
+            this.tabContentDelete.Controls.Add(this.cbbDelFlag);
+            this.tabContentDelete.Location = new System.Drawing.Point(4, 26);
+            this.tabContentDelete.Name = "tabContentDelete";
+            this.tabContentDelete.Padding = new System.Windows.Forms.Padding(3);
+            this.tabContentDelete.Size = new System.Drawing.Size(710, 348);
+            this.tabContentDelete.TabIndex = 3;
+            this.tabContentDelete.Text = "Deletar";
+            this.tabContentDelete.UseVisualStyleBackColor = true;
+            // 
+            // txtDelId
+            // 
+            this.txtDelId.Enabled = false;
+            this.txtDelId.Location = new System.Drawing.Point(6, 27);
+            this.txtDelId.Name = "txtDelId";
+            this.txtDelId.ReadOnly = true;
+            this.txtDelId.Size = new System.Drawing.Size(154, 25);
+            this.txtDelId.TabIndex = 45;
+            this.txtDelId.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblDelId
+            // 
+            this.lblDelId.AutoSize = true;
+            this.lblDelId.Location = new System.Drawing.Point(5, 6);
+            this.lblDelId.Name = "lblDelId";
+            this.lblDelId.Size = new System.Drawing.Size(20, 17);
+            this.lblDelId.TabIndex = 44;
+            this.lblDelId.Text = "ID";
+            // 
+            // txtDelLimit
+            // 
+            this.txtDelLimit.Enabled = false;
+            this.txtDelLimit.Location = new System.Drawing.Point(9, 223);
+            this.txtDelLimit.Mask = "$ 999\\.999\\,\\0\\0";
+            this.txtDelLimit.Name = "txtDelLimit";
+            this.txtDelLimit.ReadOnly = true;
+            this.txtDelLimit.Size = new System.Drawing.Size(151, 25);
+            this.txtDelLimit.TabIndex = 43;
+            // 
+            // lblDelLimit
+            // 
+            this.lblDelLimit.AutoSize = true;
+            this.lblDelLimit.Location = new System.Drawing.Point(6, 203);
+            this.lblDelLimit.Name = "lblDelLimit";
+            this.lblDelLimit.Size = new System.Drawing.Size(42, 17);
+            this.lblDelLimit.TabIndex = 42;
+            this.lblDelLimit.Text = "Limite";
+            // 
+            // txtDelCvc
+            // 
+            this.txtDelCvc.Enabled = false;
+            this.txtDelCvc.Location = new System.Drawing.Point(356, 91);
+            this.txtDelCvc.Mask = "000";
+            this.txtDelCvc.Name = "txtDelCvc";
+            this.txtDelCvc.ReadOnly = true;
+            this.txtDelCvc.Size = new System.Drawing.Size(79, 25);
+            this.txtDelCvc.TabIndex = 41;
+            // 
+            // lblDelCvc
+            // 
+            this.lblDelCvc.AutoSize = true;
+            this.lblDelCvc.Location = new System.Drawing.Point(353, 71);
+            this.lblDelCvc.Name = "lblDelCvc";
+            this.lblDelCvc.Size = new System.Drawing.Size(32, 17);
+            this.lblDelCvc.TabIndex = 40;
+            this.lblDelCvc.Text = "CVC";
+            // 
+            // lblDelExpireYear
+            // 
+            this.lblDelExpireYear.AutoSize = true;
+            this.lblDelExpireYear.Location = new System.Drawing.Point(177, 135);
+            this.lblDelExpireYear.Name = "lblDelExpireYear";
+            this.lblDelExpireYear.Size = new System.Drawing.Size(121, 17);
+            this.lblDelExpireYear.TabIndex = 39;
+            this.lblDelExpireYear.Text = "Ano de Vencimento";
+            // 
+            // cbbDelExpireYear
+            // 
+            this.cbbDelExpireYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbDelExpireYear.Enabled = false;
+            this.cbbDelExpireYear.FormattingEnabled = true;
+            this.cbbDelExpireYear.Items.AddRange(new object[] {
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"});
+            this.cbbDelExpireYear.Location = new System.Drawing.Point(180, 155);
+            this.cbbDelExpireYear.Name = "cbbDelExpireYear";
+            this.cbbDelExpireYear.Size = new System.Drawing.Size(151, 25);
+            this.cbbDelExpireYear.TabIndex = 38;
+            // 
+            // lblDelExpireMonth
+            // 
+            this.lblDelExpireMonth.AutoSize = true;
+            this.lblDelExpireMonth.Location = new System.Drawing.Point(3, 135);
+            this.lblDelExpireMonth.Name = "lblDelExpireMonth";
+            this.lblDelExpireMonth.Size = new System.Drawing.Size(123, 17);
+            this.lblDelExpireMonth.TabIndex = 37;
+            this.lblDelExpireMonth.Text = "Mês de Vencimento";
+            // 
+            // cbbDelExpireMonth
+            // 
+            this.cbbDelExpireMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbDelExpireMonth.Enabled = false;
+            this.cbbDelExpireMonth.FormattingEnabled = true;
+            this.cbbDelExpireMonth.Items.AddRange(new object[] {
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12"});
+            this.cbbDelExpireMonth.Location = new System.Drawing.Point(6, 155);
+            this.cbbDelExpireMonth.Name = "cbbDelExpireMonth";
+            this.cbbDelExpireMonth.Size = new System.Drawing.Size(151, 25);
+            this.cbbDelExpireMonth.TabIndex = 36;
+            // 
+            // txtDelNumber
+            // 
+            this.txtDelNumber.Location = new System.Drawing.Point(180, 91);
+            this.txtDelNumber.Mask = "0000 0000 0000 0099";
+            this.txtDelNumber.Name = "txtDelNumber";
+            this.txtDelNumber.ReadOnly = true;
+            this.txtDelNumber.Size = new System.Drawing.Size(151, 25);
+            this.txtDelNumber.TabIndex = 35;
+            // 
+            // lblDelNumber
+            // 
+            this.lblDelNumber.AutoSize = true;
+            this.lblDelNumber.Location = new System.Drawing.Point(177, 71);
+            this.lblDelNumber.Name = "lblDelNumber";
+            this.lblDelNumber.Size = new System.Drawing.Size(56, 17);
+            this.lblDelNumber.TabIndex = 34;
+            this.lblDelNumber.Text = "Número";
+            // 
+            // lblDelFlag
+            // 
+            this.lblDelFlag.AutoSize = true;
+            this.lblDelFlag.Location = new System.Drawing.Point(6, 71);
+            this.lblDelFlag.Name = "lblDelFlag";
+            this.lblDelFlag.Size = new System.Drawing.Size(59, 17);
+            this.lblDelFlag.TabIndex = 33;
+            this.lblDelFlag.Text = "Bandeira";
+            // 
+            // cbbDelFlag
+            // 
+            this.cbbDelFlag.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbDelFlag.Enabled = false;
+            this.cbbDelFlag.FormattingEnabled = true;
+            this.cbbDelFlag.Location = new System.Drawing.Point(6, 91);
+            this.cbbDelFlag.Name = "cbbDelFlag";
+            this.cbbDelFlag.Size = new System.Drawing.Size(151, 25);
+            this.cbbDelFlag.TabIndex = 32;
+            // 
+            // btnDelCancel
+            // 
+            this.btnDelCancel.Location = new System.Drawing.Point(6, 310);
+            this.btnDelCancel.Name = "btnDelCancel";
+            this.btnDelCancel.Size = new System.Drawing.Size(91, 32);
+            this.btnDelCancel.TabIndex = 47;
+            this.btnDelCancel.Text = "Cancelar";
+            this.btnDelCancel.UseVisualStyleBackColor = true;
+            this.btnDelCancel.Click += new System.EventHandler(this.btnDelCancel_Click);
+            // 
+            // btnDelSave
+            // 
+            this.btnDelSave.Location = new System.Drawing.Point(613, 310);
+            this.btnDelSave.Name = "btnDelSave";
+            this.btnDelSave.Size = new System.Drawing.Size(91, 32);
+            this.btnDelSave.TabIndex = 46;
+            this.btnDelSave.Text = "Deletar";
+            this.btnDelSave.UseVisualStyleBackColor = true;
+            this.btnDelSave.Click += new System.EventHandler(this.btnDelSave_Click);
+            // 
             // WalletPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -612,6 +834,8 @@
             this.gpbFilter.PerformLayout();
             this.tabContentUpdate.ResumeLayout(false);
             this.tabContentUpdate.PerformLayout();
+            this.tabContentDelete.ResumeLayout(false);
+            this.tabContentDelete.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -663,5 +887,22 @@
         private System.Windows.Forms.ComboBox cbbUpdFlag;
         private System.Windows.Forms.TextBox txtUpdId;
         private System.Windows.Forms.Label lblUpdId;
+        private System.Windows.Forms.TabPage tabContentDelete;
+        private System.Windows.Forms.TextBox txtDelId;
+        private System.Windows.Forms.Label lblDelId;
+        private System.Windows.Forms.MaskedTextBox txtDelLimit;
+        private System.Windows.Forms.Label lblDelLimit;
+        private System.Windows.Forms.MaskedTextBox txtDelCvc;
+        private System.Windows.Forms.Label lblDelCvc;
+        private System.Windows.Forms.Label lblDelExpireYear;
+        private System.Windows.Forms.ComboBox cbbDelExpireYear;
+        private System.Windows.Forms.Label lblDelExpireMonth;
+        private System.Windows.Forms.ComboBox cbbDelExpireMonth;
+        private System.Windows.Forms.MaskedTextBox txtDelNumber;
+        private System.Windows.Forms.Label lblDelNumber;
+        private System.Windows.Forms.Label lblDelFlag;
+        private System.Windows.Forms.ComboBox cbbDelFlag;
+        private System.Windows.Forms.Button btnDelCancel;
+        private System.Windows.Forms.Button btnDelSave;
     }
 }

@@ -77,8 +77,13 @@ namespace View
             cbbUpdFlag.DisplayMember = "Name";
             cbbUpdFlag.ValueMember = "Id";
 
-            // Disable update tab.
+            cbbDelFlag.DataSource = LoadFlags();
+            cbbDelFlag.DisplayMember = "Name";
+            cbbDelFlag.ValueMember = "Id";
+
+            // Disable update and delete tabs.
             TabPageState(tabContentUpdate, false);
+            TabPageState(tabContentDelete, false);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -154,7 +159,7 @@ namespace View
 
         private void btnUpdCancel_Click(object sender, EventArgs e)
         {
-            OutUpdateTab();
+            OutPrivateTabs();
         }
 
         private void btnUpdSave_Click(object sender, EventArgs e)
@@ -182,9 +187,7 @@ namespace View
 
                     BackToPrincipalTab();
 
-                    OutUpdateTab();
-
-                    CardInAction = null;
+                    OutPrivateTabs();
                 }
                 else
                 {
@@ -192,6 +195,35 @@ namespace View
                 }
 
                 txtUpdLimit.TextMaskFormat = limit;
+            }
+        }
+
+        private void btnDelCancel_Click(object sender, EventArgs e)
+        {
+            OutPrivateTabs();
+        }
+
+        private void btnDelSave_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Confirma a exclusão do cartão?", "Deletar Cartão",
+                                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (dr == DialogResult.Yes)
+            {
+                if (WalletPanel.Card.Delete(CardInAction))
+                {
+                    MessageBox.Show("Cartão excluído com sucesso!");
+
+                    LoadCards();
+
+                    BackToPrincipalTab();
+
+                    OutPrivateTabs();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao deletar o cartão.");
+                }
             }
         }
 
@@ -358,20 +390,41 @@ namespace View
             txtUpdLimit.Text = String.Empty;
         }
 
+        private void ClearDelForm()
+        {
+            txtDelId.Text = String.Empty;
+            cbbDelFlag.SelectedIndex = -1;
+            txtDelNumber.Text = String.Empty;
+            txtDelCvc.Text = String.Empty;
+            cbbDelExpireMonth.SelectedIndex = -1;
+            cbbDelExpireYear.SelectedIndex = -1;
+            txtDelLimit.Text = String.Empty;
+        }
+
         private void dgvSearch_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             TabPageState(tabContentUpdate, true);
+            TabPageState(tabContentDelete, true);
 
             var card = dgvSearch.CurrentRow.DataBoundItem as Card;
 
             txtUpdId.Text = card.Id.ToString();
 
-            cbbUpdFlag.SelectedIndex = card.Flag.Id;
+            cbbUpdFlag.SelectedIndex = GetFlags().IndexOf(card.Flag.Name);
             txtUpdNumber.Text = card.Number;
             txtUpdCvc.Text = card.Cvc;
             cbbUpdExpireMonth.SelectedIndex = GetExpireMonths().IndexOf(card.ExpireMonth);
             cbbUpdExpireYear.SelectedIndex = GetExpireYears().IndexOf(card.ExpireYear);
             txtUpdLimit.Text = card.Limit.ToString();
+
+            txtDelId.Text = card.Id.ToString();
+
+            cbbDelFlag.SelectedIndex = GetFlags().IndexOf(card.Flag.Name);
+            txtDelNumber.Text = card.Number;
+            txtDelCvc.Text = card.Cvc;
+            cbbDelExpireMonth.SelectedIndex = GetExpireMonths().IndexOf(card.ExpireMonth);
+            cbbDelExpireYear.SelectedIndex = GetExpireYears().IndexOf(card.ExpireYear);
+            txtDelLimit.Text = card.Limit.ToString();
 
             CardInAction = card;
 
@@ -402,6 +455,24 @@ namespace View
             TabPageState(tabContentUpdate, false);
         }
 
+        private void OutDeleteTab()
+        {
+            ClearDelForm();
+
+            BackToPrincipalTab();
+
+            TabPageState(tabContentDelete, false);
+        }
+
+        private void OutPrivateTabs()
+        {
+            OutUpdateTab();
+
+            OutDeleteTab();
+
+            CardInAction = null;
+        }
+
         private List<Int32> GetExpireMonths()
         {
             List<Int32> months = new List<Int32>();
@@ -424,6 +495,18 @@ namespace View
             }
 
             return years;
+        }
+
+        private List<String> GetFlags()
+        {
+            List<String> flags = new List<String>();
+
+            foreach (var flag in LoadFlags())
+            {
+                flags.Add(((Flag)flag).Name);
+            }
+
+            return flags;
         }
     }
 }

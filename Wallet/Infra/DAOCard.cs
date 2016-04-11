@@ -165,5 +165,25 @@ namespace Infra
                 return false;
             }
         }
+
+        public Boolean Delete(Card card)
+        {
+            String sql = "DELETE FROM Cards WHERE Id = @Id";
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand(sql, base.SqlConn);
+
+                cmd.Parameters.AddWithValue("@Id", card.Id);
+
+                return Convert.ToBoolean(cmd.ExecuteNonQuery());
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+
+                return false;
+            }
+        }
     }
 }
